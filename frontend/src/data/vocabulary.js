@@ -1,5 +1,5 @@
 /**
- * 英検級別 単語データ（ハワイ道案内・位置情報特化拡充版）
+ * 英検級別 単語データ（超特大拡充版）
  * 各級ごとにハワイ旅行で頻出する単語と、ハワイでのシチュエーションに特化した例文を収録。
  */
 
@@ -46,8 +46,8 @@ export const vocabularyData = {
         ]
     },
     '4級': {
-        title: '英検4級レベル（旅行の基本・道案内）',
-        description: '道案内で使われる基本単語や、簡単なトラブル、レストランでの注文について話せるレベルの単語群。',
+        title: '英検4級レベル（旅行の基本会話）',
+        description: '道案内、簡単なトラブル、レストランでの注文や予定について話せるレベルの単語群。',
         words: [
             { word: 'delicious', ja: 'とても美味しい', pos: '形容詞', example: 'This acai bowl is delicious!', exampleJa: 'このアサイーボウル、とっても美味しいです！' },
             { word: 'beautiful', ja: '美しい', pos: '形容詞', example: 'The sunset at Magic Island is beautiful.', exampleJa: 'マジックアイランドの夕日は美しいです。' },
@@ -83,21 +83,12 @@ export const vocabularyData = {
             { word: 'near', ja: '近い', pos: '形容詞/前置詞', example: 'Is there a poke shop near here?', exampleJa: 'この近くにポケのお店はありますか？' },
             { word: 'far', ja: '遠い', pos: '形容詞', example: 'Is the beach far from the hotel?', exampleJa: 'ビーチはホテルから遠いですか？' },
             { word: 'left', ja: '左', pos: '名詞/副詞', example: 'Turn left at the next corner.', exampleJa: '次の角を左に曲がってください。' },
-            { word: 'right', ja: '右', pos: '名詞/副詞', example: 'The restroom is on your right.', exampleJa: 'トイレはあなたの右側にあります。' },
-            // ----- 新規追加：道案内の超基本 -----
-            { word: 'straight', ja: 'まっすぐ', pos: '副詞/形容詞', example: 'Go straight on Kalakaua Avenue.', exampleJa: 'カラカウア通りをまっすぐ進んでください。' },
-            { word: 'corner', ja: '角・交差点', pos: '名詞', example: 'Turn right at the next corner.', exampleJa: '次の角を右に曲がってください。' },
-            { word: 'block', ja: 'ブロック(区画)', pos: '名詞', example: 'Go straight for two blocks.', exampleJa: '2ブロックまっすぐ進んでください。' },
-            { word: 'cross', ja: '渡る', pos: '動詞', example: 'Cross the street here.', exampleJa: 'ここで通りを渡ってください。' },
-            { word: 'street', ja: '通り・道', pos: '名詞', example: 'Which street is the Royal Hawaiian Center on?', exampleJa: 'ロイヤルハワイアンセンターはどの通りですか？' },
-            { word: 'looking for', ja: '〜を探している', pos: '熟語', example: 'I am looking for the bus stop.', exampleJa: 'バス停を探しています。' },
-            { word: 'lost', ja: '迷った', pos: '形容詞', example: 'Excuse me, I am completely lost.', exampleJa: 'すみません、完全に道に迷ってしまいました。' },
-            { word: 'way', ja: '道・方向', pos: '名詞', example: 'Is this the right way to the beach?', exampleJa: 'ビーチへ行く道はこれで合っていますか？' }
+            { word: 'right', ja: '右', pos: '名詞/副詞', example: 'The restroom is on your right.', exampleJa: 'トイレはあなたの右側にあります。' }
         ]
     },
     '3級': {
-        title: '英検3級レベル（位置関係・詳細な道案内）',
-        description: '「〜の隣」「交差点」など、地図を見ながら具体的な位置関係を説明したり聞いたりするレベルの単語群。',
+        title: '英検3級レベル（旅行での自己主張・交渉）',
+        description: '状況の説明、要望の伝達、軽いトラブルへの対応など、自立した行動ができるようになる単語群。',
         words: [
             { word: 'available', ja: '利用可能・空いている', pos: '形容詞', example: 'Is this table available?', exampleJa: 'このテーブルは空いていますか？' },
             { word: 'reservation', ja: '予約', pos: '名詞', example: 'I have a reservation under the name Suzuki.', exampleJa: '鈴木という名前で予約しています。' },
@@ -133,22 +124,12 @@ export const vocabularyData = {
             { word: 'maybe', ja: 'もしかすると（50%）', pos: '副詞', example: 'Maybe we can see sea turtles.', exampleJa: 'もしかしたらウミガメが見られるかもしれません。' },
             { word: 'actually', ja: '実は・実際に', pos: '副詞', example: 'Actually, this is my honeymoon.', exampleJa: '実は、今回が新婚旅行なんです。' },
             { word: 'certainly', ja: '承知しました・確実に', pos: '副詞', example: 'Certainly, sir. Right away.', exampleJa: 'かしこまりました。ただちにお持ちします。（ウェイターの返事など）' },
-            // ----- 新規追加：位置関係・詳細な道案内 -----
-            { word: 'intersection', ja: '交差点', pos: '名詞', example: 'Cross the intersection and you will see it.', exampleJa: '交差点を渡ると見えてきますよ。' },
-            { word: 'traffic light', ja: '信号機', pos: '名詞', example: 'Turn left at the second traffic light.', exampleJa: '2つ目の信号を左に曲がってください。' },
-            { word: 'crosswalk', ja: '横断歩道', pos: '名詞', example: 'Please use the crosswalk for safety.', exampleJa: '安全のため横断歩道を利用してください。' },
-            { word: 'next to', ja: '〜の隣に', pos: '熟語', example: 'The ABC Store is next to the hotel.', exampleJa: 'ABCストアはホテルの隣にあります。' },
-            { word: 'across from', ja: '〜の向かい側に', pos: '熟語', example: 'It is across from the Ala Moana Center.', exampleJa: 'それはアラモアナセンターの向かい側にあります。' },
-            { word: 'in front of', ja: '〜の前に', pos: '熟語', example: 'Let\'s meet in front of the Duke Kahanamoku statue.', exampleJa: 'デューク・カハナモク像の前で待ち合わせしましょう。' },
-            { word: 'behind', ja: '〜の後ろに', pos: '前置詞', example: 'The parking lot is behind the building.', exampleJa: '駐車場は建物の後ろにあります。' },
-            { word: 'between', ja: '〜の間に', pos: '前置詞', example: 'The restaurant is between the bank and the cafe.', exampleJa: 'レストランは銀行とカフェの間にあります。' },
-            { word: 'direction', ja: '方向・道順', pos: '名詞', example: 'Could you give me directions to the airport?', exampleJa: '空港への道順を教えていただけますか？' },
-            { word: 'get to', ja: '〜に到着する・行く', pos: '熟語', example: 'How do I get to the beach from here?', exampleJa: 'ここからビーチへはどう行けばいいですか？' }
+            { word: 'straight', ja: 'まっすぐ', pos: '副詞/形容詞', example: 'Go straight on Kalakaua Avenue.', exampleJa: 'カラカウア通りをまっすぐ進んでください。' }
         ]
     },
     '準2級': {
-        title: '英検準2級レベル（より複雑な道案内・車での移動）',
-        description: 'レンタカーの運転、高速道路の利用、地理的な説明に関する単語群。',
+        title: '英検準2級レベル（現地での複雑な状況説明）',
+        description: '病気や詳細なトラブル、文化についてより深くコミュニケーションするための単語群。',
         words: [
             { word: 'allergic', ja: 'アレルギーがある', pos: '形容詞', example: 'I am allergic to peanuts.', exampleJa: '私はピーナッツアレルギーです。（外食時必須）' },
             { word: 'symptom', ja: '症状', pos: '名詞', example: 'My symptoms are a headache and fever.', exampleJa: '症状は頭痛と熱です。（病院や薬局にて）' },
@@ -184,17 +165,7 @@ export const vocabularyData = {
             { word: 'vehicle', ja: '車両・乗り物', pos: '名詞', example: 'Your vehicle will be towed if parked here.', exampleJa: 'ここに停めると車をレッカー移動されます。（標識の頻出語）' },
             { word: 'admission', ja: '入場（料）', pos: '名詞', example: 'How much is the admission fee?', exampleJa: '入場料はいくらですか？' },
             { word: 'accommodation', ja: '宿泊施設', pos: '名詞', example: 'We are looking for cheap accommodation.', exampleJa: '安い宿泊施設を探しています。' },
-            { word: 'signature', ja: '署名', pos: '名詞', example: 'May I have your signature here?', exampleJa: 'こちらにサインをいただけますか。（クレジットカード決済時）' },
-            // ----- 新規追加：車移動・地理・位置関係の指示 -----
-            { word: 'freeway', ja: '高速道路', pos: '名詞', example: 'Take the H-1 freeway going west.', exampleJa: 'H-1フリーウェイ（ハワイの主要高速）を西に向かってください。' },
-            { word: 'exit', ja: '出口', pos: '名詞/動詞', example: 'Take exit 22 for Waikiki.', exampleJa: 'ワイキキへは22番出口で降りてください。' },
-            { word: 'north', ja: '北', pos: '名詞/副詞', example: 'We are driving north toward Haleiwa.', exampleJa: 'ハレイワに向かって北へドライブしています。' },
-            { word: 'south', ja: '南', pos: '名詞/副詞', example: 'Diamond Head is located south of Waikiki.', exampleJa: 'ダイアモンドヘッドはワイキキの南に位置しています。' },
-            { word: 'east', ja: '東', pos: '名詞/副詞', example: 'Drive east on Kalakaua Avenue.', exampleJa: 'カラカウア通りを東に進んでください。' },
-            { word: 'west', ja: '西', pos: '名詞/副詞', example: 'The sun sets in the west over the ocean.', exampleJa: '海を越えて西に太陽が沈みます。' },
-            { word: 'landmark', ja: '目印・名所', pos: '名詞', example: 'Is there any landmark nearby?', exampleJa: '近くに何か目印はありますか？' },
-            { word: 'navigate', ja: 'ナビゲートする・航行する', pos: '動詞', example: 'I will use Google Maps to navigate.', exampleJa: '道案内にはGoogleマップを使います。' },
-            { word: 'pedestrian', ja: '歩行者', pos: '名詞', example: 'Yield to pedestrians at the crosswalk.', exampleJa: '横断歩道では歩行者に譲ってください。（運転時の必須ルール）' }
+            { word: 'signature', ja: '署名', pos: '名詞', example: 'May I have your signature here?', exampleJa: 'こちらにサインをいただけますか。（クレジットカード決済時）' }
         ]
     },
     '2級': {
@@ -235,12 +206,29 @@ export const vocabularyData = {
             { word: 'liability', ja: '法的責任', pos: '名詞', example: 'The rental car company requires liability insurance.', exampleJa: 'レンタカー会社は損害賠償責任保険を要求します。' },
             { word: 'deductible', ja: '（保険の）自己負担額', pos: '名詞', example: 'There is a $500 deductible for rental car damage.', exampleJa: 'レンタカーの損傷には500ドルの免責金額（自己負担）があります。' },
             { word: 'excursion', ja: '小旅行・遠足', pos: '名詞', example: 'We booked a snorkeling excursion to Molokini.', exampleJa: 'モロキニ島へのシュノーケリング・エクスカーション（オプショナルツアー）を予約しました。' },
-            { word: 'itinerary', ja: '旅程表', pos: '名詞', example: 'Here is our detailed itinerary for the week.', exampleJa: 'これが私たちのこの1週間の詳細な旅程表です。' },
-            // ----- 新規追加：位置関係に関する高度な単語 -----
-            { word: 'adjacent', ja: '隣接した', pos: '形容詞', example: 'Our hotel is adjacent to the shopping center.', exampleJa: '私たちのホテルはショッピングセンターに隣接しています。' },
-            { word: 'vicinity', ja: '近隣・周辺', pos: '名詞', example: 'Are there any good restaurants in the vicinity?', exampleJa: 'この近隣に美味しいレストランはありますか？' },
-            { word: 'intersection', ja: '交差点', pos: '名詞', example: 'There was a minor accident at the intersection.', exampleJa: '交差点で軽微な事故がありました。' },
-            { word: 'orient', ja: '（方向などを）合わせる', pos: '動詞', example: 'Let me look at the map to orient myself.', exampleJa: '自分の現在地を把握するために地図を見させてください。' }
+            { word: 'itinerary', ja: '旅程表', pos: '名詞', example: 'Here is our detailed itinerary for the week.', exampleJa: 'これが私たちのこの1週間の詳細な旅程表です。' }
         ]
     }
 };
+
+// --- 以下、画面表示用データへの変換と取得ヘルパー ---
+
+export const eikenLevels = Object.keys(vocabularyData).map((key, index) => {
+    const data = vocabularyData[key];
+    const colors = ['#4ade80', '#fbbf24', '#f87171', '#a78bfa', '#38bdf8'];
+    const icons = ['🎒', '🌍', '🗣️', '💼', '🎓'];
+
+    return {
+        id: key,
+        title: key,
+        subtitle: data.title.split('（')[1]?.replace('）', '') || '',
+        description: data.description,
+        color: colors[index % colors.length],
+        icon: icons[index % icons.length],
+        words: data.words
+    };
+});
+
+export function getEikenLevel(id) {
+    return eikenLevels.find(level => level.id === id) || null;
+}
