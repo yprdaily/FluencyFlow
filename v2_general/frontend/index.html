@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FluencyFlow — 総合英語学習</title>
+  <meta name="description" content="1年以上の長期学習で「英語が話せる」を実現する総合英語学習アプリ。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/index.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+<body>
+  <div id="app">
+    <nav id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-icon">🚀</span>
+        <span class="brand-text">FluencyFlow</span>
+      </div>
+      <div class="sidebar-nav" id="sidebar-nav"></div>
+      <div class="sidebar-footer">
+        <div class="xp-display" id="xp-display"></div>
+      </div>
+    </nav>
+    <main id="main-content" class="main-content">
+      <div id="page-container" class="page-container"></div>
+    </main>
+  </div>
+  <div id="toast-container" class="toast-container"></div>
+  <div id="modal-overlay" class="modal-overlay hidden"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
