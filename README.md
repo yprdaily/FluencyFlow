@@ -1,64 +1,55 @@
-# 🚀 FluencyFlow (Formerly Hawaii English App)
+# 🌺 Hawaii English App
 
-短期集中旅行用アプリから進化した、**真に英語が話せるようになるための総合型・長期実践学習アプリ**です。
+ハワイ旅行・実用シチュエーションに特化した短期集中型の英会話学習アプリです。 Edge TTSによる自然な発音と、OllamaによるAIフリートーク機能を搭載しており、旅行前の実践的な英会話トレーニングに最適です。
 
-## 🌟 主な特長 (V2 の新機能)
+---
+> [!NOTE]
+> このリポジトリには、より汎用的な無制限の英語学習に特化した **[FluencyFlow V2](./v2_general)** も内包されています。汎用学習をご希望の場合は `v2_general` ディレクトリをご参照ください。
 
-1. **📚 無制限・究極の英単語帳 (ハイブリッド辞書エンジン)**
-   - パブリックドメインの巨大な英和辞典データベース（ejdict: 約46,000語）を SQLite 経由でフロントエンドに統合。
-   - ブラウザを重くすることなく、ページネーションと検索機能で超巨大データにアクセス可能。
-   - **AI自動生成**: 辞書に未登録の単語を検索した場合、バックエンドの **Ollama (llama3.1:8b)** が自動的に意味・発音記号・品詞・例文を生成し、ローカルDBに保存し続けます。これにより「この世のすべての英単語」に実質的に対応しています。
-2. **🏆 CEFRレベル別ランダムクイズ機能**
-   - 4万語超のデータベースから、A1〜C1の難易度（CEFRレベル）別にランダムな4択クイズを出題。ダミーの選択肢も毎回シャッフルされ、何度でも新鮮なクイズに挑戦できます。
-3. **💬 AI フリートーク・ロールプレイ会話**
-   - 旅行中の特定のシチュエーション（カフェ、空港、ホテルなど）だけでなく、あらゆる話題に対し、ネイティブレベルのAIと音声・テキストでリアルタイム英会話が可能です。
-4. **🗣 発音・アクセント（Minimal Pairs）特訓**
-   - RとL、BとV、THの違いなど、日本人が苦手とする「発音記号の壁」を乗り越えるための聞き分け特訓機能（音声再生付き）を搭載しています。
-5. **🤙 スラング＆イディオム辞典**
-   - ネイティブが日常で使う自然な表現やイディオム、スラングの解説と音声を豊富に収録しています。
-6. **🎵 高速テキスト読み上げ (Edge TTS)**
-   - 全ての単語やフレーズはEdge TTS連携により、ネイティブの自然な発音とイントネーションで確認できます。
+## 🌟 主な機能
+1. **🌴 ハワイ旅行向け実践レッスン** (空港、ホテル、ショッピング、レストランなど、リアルな場面を想定)
+2. **🏆 リスニング・並べ替えクイズ** 各レッスンの習熟度を測るためのインタラクティブなテスト
+3. **🤖 Ollama 連携フリートーク** (ネイティブの店員やホストとのロールプレイなど、AIと自由会話)
+4. **🤙 スラング・イディオム辞書** ハワイ・ローカルの最新スラングや、ネイティブ定番のイディオム集
+5. **🔊 音声合成連携** Edge TTSによるネイティブな英語音声の超リアルな読み上げ機能
 
 ## 🛠 技術スタック
-
-*   **Frontend**: HTML, CSS, JavaScript (Vanilla JS/ES Modules), Vite
-*   **Backend**: Python, FastAPI, SQLite
-*   **AI**: Ollama (llama 3.1 8B 等ローカル推論対応)
-*   **TTS**: Edge TTS
+- **Frontend**: HTML, CSS, JavaScript (Vanilla JS), Vite
+- **Backend**: Python, FastAPI
+- **AI**: Ollama (LLMローカル推論)
+- **TTS**: Edge TTS
 
 ## 🚀 起動方法
 
 ### 前提条件
-- `Node.js` (フロントエンドの開発サーバー用)
-- `Python 3.10+` (バックエンドAPIとDB用)
-- `Ollama` がローカルにインストール・起動済み (`llama3.1:8b` 等のモデルが存在すること)
+- `Python 3.10+`
+- `Node.js`
+- `Ollama` がローカルにインストール・起動済みであること（`llama3.2` などのモデルがpullされていること）
 
-### 環境のセットアップ
+### セットアップ（1-Click）
+Windows環境の場合は、ルートディレクトリにあるバッチファイルで自動セットアップ・起動が可能です。
+```bash
+# 初回セットアップ
+setup.bat
 
-1. **リポジトリのクローン**
-   ```bash
-   git clone https://github.com/yprdaily/FluencyFlow.git
-   cd FluencyFlow/v2_general
-   ```
-2. **バックエンドの起動 (ポート 8080)**
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   python server.py
-   ```
-3. **フロントエンドの起動 (ポート 3000)**
-   別ターミナルで実行してください。
-   ```bash
-   cd frontend
-   npm install
-   npx vite --port 3000
-   ```
-4. ブラウザで `http://localhost:3000` にアクセスします。
+# 2回目以降の起動
+start.bat
+```
 
-## 💡 アプリケーション構成
+### 手動起動
+#### バックエンド (Port: 8765)
+```bash
+cd backend
+pip install -r requirements.txt
+python server.py
+```
 
-- `v2_general/frontend/`: ユーザーインターフェース (SPAアーキテクチャ)
-- `v2_general/backend/`: FastAPI サーバー、SQLite 辞書データ (`dictionary.db`)、Ollama 連携ロジック
+#### フロントエンド (Port: 4567)
+別ターミナルで実行してください。
+```bash
+cd frontend
+npm install
+npx vite --port 4567
+```
 
----
-*Created as part of the English Mastery evolution series.*
+ブラウザで `http://localhost:4567` にアクセスして学習を開始してください。
