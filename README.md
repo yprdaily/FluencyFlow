@@ -1,62 +1,64 @@
-# 🌺 Hawaii English App
+# 🚀 FluencyFlow (Formerly Hawaii English App)
 
-ハワイ旅行に特化した短期集中型の英語・英会話学習アプリです。
-旅行前の1ヶ月で「使える英語」を身につけるための実践的なシチュエーションと、AIを活用したリアルな会話シミュレーションを提供します。
+短期集中旅行用アプリから進化した、**真に英語が話せるようになるための総合型・長期実践学習アプリ**です。
 
-> [!NOTE]
-> このリポジトリには、より汎用的な無制限の英語学習に特化した **[FluencyFlow V2](./v2_general)** も内包されています。長期の汎用学習をご希望の場合は `v2_general` ディレクトリをご参照ください。
+## 🌟 主な特長 (V2 の新機能)
 
-## 📸 デモ・スクリーンショット
-> *ここにアプリのトップページや会話画面のスクリーンショットを追加してください*
-<!-- ![Home Screen](path/to/home.png) -->
-<!-- ![Conversation Screen](path/to/conversation.png) -->
-<!-- ![AI Talk](path/to/ai-talk.png) -->
+1. **📚 無制限・究極の英単語帳 (ハイブリッド辞書エンジン)**
+   - パブリックドメインの巨大な英和辞典データベース（ejdict: 約46,000語）を SQLite 経由でフロントエンドに統合。
+   - ブラウザを重くすることなく、ページネーションと検索機能で超巨大データにアクセス可能。
+   - **AI自動生成**: 辞書に未登録の単語を検索した場合、バックエンドの **Ollama (llama3.1:8b)** が自動的に意味・発音記号・品詞・例文を生成し、ローカルDBに保存し続けます。これにより「この世のすべての英単語」に実質的に対応しています。
+2. **🏆 CEFRレベル別ランダムクイズ機能**
+   - 4万語超のデータベースから、A1〜C1の難易度（CEFRレベル）別にランダムな4択クイズを出題。ダミーの選択肢も毎回シャッフルされ、何度でも新鮮なクイズに挑戦できます。
+3. **💬 AI フリートーク・ロールプレイ会話**
+   - 旅行中の特定のシチュエーション（カフェ、空港、ホテルなど）だけでなく、あらゆる話題に対し、ネイティブレベルのAIと音声・テキストでリアルタイム英会話が可能です。
+4. **🗣 発音・アクセント（Minimal Pairs）特訓**
+   - RとL、BとV、THの違いなど、日本人が苦手とする「発音記号の壁」を乗り越えるための聞き分け特訓機能（音声再生付き）を搭載しています。
+5. **🤙 スラング＆イディオム辞典**
+   - ネイティブが日常で使う自然な表現やイディオム、スラングの解説と音声を豊富に収録しています。
+6. **🎵 高速テキスト読み上げ (Edge TTS)**
+   - 全ての単語やフレーズはEdge TTS連携により、ネイティブの自然な発音とイントネーションで確認できます。
 
 ## 🛠 技術スタック
-- **Frontend**: Vite + Vanilla JavaScript (ES Modules), HTML5, CSS3
-- **Backend**: FastAPI (Python)
-- **AI Integration**: Ollama (`llama3.2` などを利用したローカルLLM)
-- **Audio Processing**:
-  - Web Speech API (ブラウザネイティブの音声認識 STT)
-  - Edge TTS (ネイティブレベルの高品質な音声合成)
 
-## 🌟 主な機能
-- **📚 実践英単語・フレーズ帳**: 空港、ホテル、レストランなどハワイ旅行のリアルな場面を網羅
-- **🤙 スラング・イディオム辞典**: 「Shaka」「Mahalo」などハワイ特有のローカル表現やネイティブの口語表現
-- **💬 会話シミュレーション**: 実際のシナリオに基づく会話ロールプレイ（音声認識を用いた発音チェック付き）
-- **🤖 AIフリートーク**: OllamaのLLMを活用した、店舗スタッフ等とのアバター型リアルタイム会話演習
-- **🗣 発音練習とリスニング**: Minimal Pairs を用いた耳の特訓と、正確な音声フィードバック
+*   **Frontend**: HTML, CSS, JavaScript (Vanilla JS/ES Modules), Vite
+*   **Backend**: Python, FastAPI, SQLite
+*   **AI**: Ollama (llama 3.1 8B 等ローカル推論対応)
+*   **TTS**: Edge TTS
 
-## ✨ 技術的ハイライト
-- **AIのシームレスな統合**: クラウドAPIに依存せず、Ollamaを用いたローカルでの完結した高度な英会話の実現
-- **リアルタイム音声処理**: Edge TTSとブラウザSTTを組み合わせた自然な音声のやり取り
-- **ゲーミフィケーション**: EXP（経験値）システム、連続学習記録（Streak）、正答時の紙吹雪演出など、学習継続のための工夫
+## 🚀 起動方法
 
-## 🚀 セットアップと起動方法
-詳細な手順、トラブルシューティング、各OSごとの注意事項については [SETUP.md](docs/SETUP.md) をご参照ください。
+### 前提条件
+- `Node.js` (フロントエンドの開発サーバー用)
+- `Python 3.10+` (バックエンドAPIとDB用)
+- `Ollama` がローカルにインストール・起動済み (`llama3.1:8b` 等のモデルが存在すること)
 
-### 簡単な起動手順
-1. 環境変数の設定
-   `frontend/` に `.env.example` をコピーして `.env` を作成します。
-   （デフォルト設定のままでも起動可能です）
-2. コマンドプロンプト等でバッチファイルを実行
-```bash
-# 初回セットアップ
-setup.bat
+### 環境のセットアップ
 
-# 2回目以降の起動
-start.bat
-```
+1. **リポジトリのクローン**
+   ```bash
+   git clone https://github.com/yprdaily/FluencyFlow.git
+   cd FluencyFlow/v2_general
+   ```
+2. **バックエンドの起動 (ポート 8080)**
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   python server.py
+   ```
+3. **フロントエンドの起動 (ポート 3000)**
+   別ターミナルで実行してください。
+   ```bash
+   cd frontend
+   npm install
+   npx vite --port 3000
+   ```
+4. ブラウザで `http://localhost:3000` にアクセスします。
 
-## 📂 ドキュメント
-- [アーキテクチャ詳細 (ARCHITECTURE.md)](docs/ARCHITECTURE.md)
-- [セットアップガイド (SETUP.md)](docs/SETUP.md)
+## 💡 アプリケーション構成
 
-## 🗺 今後の拡張計画 (Roadmap)
-- TypeScriptへの完全移行による型安全性の向上
-- Jestを用いた自動テスト（単体・結合テスト）の追加
-- Docker化による環境構築のさらなる簡易化
-- GitHub Pages または Vercel などを用いたフロントエンド・デモサイトのホスティング
+- `v2_general/frontend/`: ユーザーインターフェース (SPAアーキテクチャ)
+- `v2_general/backend/`: FastAPI サーバー、SQLite 辞書データ (`dictionary.db`)、Ollama 連携ロジック
 
-## 📄 ライセンス
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+---
+*Created as part of the English Mastery evolution series.*
