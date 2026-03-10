@@ -1,33 +1,45 @@
 # 🌺 Hawaii English App
 
-ハワイ旅行・実用シチュエーションに特化した短期集中型の英会話学習アプリです。 Edge TTSによる自然な発音と、OllamaによるAIフリートーク機能を搭載しており、旅行前の実践的な英会話トレーニングに最適です。
+ハワイ旅行に特化した短期集中型の英語・英会話学習アプリです。
+旅行前の1ヶ月で「使える英語」を身につけるための実践的なシチュエーションと、AIを活用したリアルな会話シミュレーションを提供します。
 
----
 > [!NOTE]
-> このリポジトリには、より汎用的な無制限の英語学習に特化した **[FluencyFlow V2](./v2_general)** も内包されています。汎用学習をご希望の場合は `v2_general` ディレクトリをご参照ください。
+> このリポジトリには、より汎用的な無制限の英語学習に特化した **[FluencyFlow V2](./v2_general)** も内包されています。長期の汎用学習をご希望の場合は `v2_general` ディレクトリをご参照ください。
 
-## 🌟 主な機能
-1. **🌴 ハワイ旅行向け実践レッスン** (空港、ホテル、ショッピング、レストランなど、リアルな場面を想定)
-2. **🏆 リスニング・並べ替えクイズ** 各レッスンの習熟度を測るためのインタラクティブなテスト
-3. **🤖 Ollama 連携フリートーク** (ネイティブの店員やホストとのロールプレイなど、AIと自由会話)
-4. **🤙 スラング・イディオム辞書** ハワイ・ローカルの最新スラングや、ネイティブ定番のイディオム集
-5. **🔊 音声合成連携** Edge TTSによるネイティブな英語音声の超リアルな読み上げ機能
+## 📸 デモ・スクリーンショット
+> *ここにアプリのトップページや会話画面のスクリーンショットを追加してください*
+<!-- ![Home Screen](path/to/home.png) -->
+<!-- ![Conversation Screen](path/to/conversation.png) -->
+<!-- ![AI Talk](path/to/ai-talk.png) -->
 
 ## 🛠 技術スタック
-- **Frontend**: HTML, CSS, JavaScript (Vanilla JS), Vite
-- **Backend**: Python, FastAPI
-- **AI**: Ollama (LLMローカル推論)
-- **TTS**: Edge TTS
+- **Frontend**: Vite + Vanilla JavaScript (ES Modules), HTML5, CSS3
+- **Backend**: FastAPI (Python)
+- **AI Integration**: Ollama (`llama3.2` などを利用したローカルLLM)
+- **Audio Processing**:
+  - Web Speech API (ブラウザネイティブの音声認識 STT)
+  - Edge TTS (ネイティブレベルの高品質な音声合成)
 
-## 🚀 起動方法
+## 🌟 主な機能
+- **📚 実践英単語・フレーズ帳**: 空港、ホテル、レストランなどハワイ旅行のリアルな場面を網羅
+- **🤙 スラング・イディオム辞典**: 「Shaka」「Mahalo」などハワイ特有のローカル表現やネイティブの口語表現
+- **💬 会話シミュレーション**: 実際のシナリオに基づく会話ロールプレイ（音声認識を用いた発音チェック付き）
+- **🤖 AIフリートーク**: OllamaのLLMを活用した、店舗スタッフ等とのアバター型リアルタイム会話演習
+- **🗣 発音練習とリスニング**: Minimal Pairs を用いた耳の特訓と、正確な音声フィードバック
 
-### 前提条件
-- `Python 3.10+`
-- `Node.js`
-- `Ollama` がローカルにインストール・起動済みであること（`llama3.2` などのモデルがpullされていること）
+## ✨ 技術的ハイライト
+- **AIのシームレスな統合**: クラウドAPIに依存せず、Ollamaを用いたローカルでの完結した高度な英会話の実現
+- **リアルタイム音声処理**: Edge TTSとブラウザSTTを組み合わせた自然な音声のやり取り
+- **ゲーミフィケーション**: EXP（経験値）システム、連続学習記録（Streak）、正答時の紙吹雪演出など、学習継続のための工夫
 
-### セットアップ（1-Click）
-Windows環境の場合は、ルートディレクトリにあるバッチファイルで自動セットアップ・起動が可能です。
+## 🚀 セットアップと起動方法
+詳細な手順、トラブルシューティング、各OSごとの注意事項については [SETUP.md](docs/SETUP.md) をご参照ください。
+
+### 簡単な起動手順
+1. 環境変数の設定
+   `frontend/` に `.env.example` をコピーして `.env` を作成します。
+   （デフォルト設定のままでも起動可能です）
+2. コマンドプロンプト等でバッチファイルを実行
 ```bash
 # 初回セットアップ
 setup.bat
@@ -36,20 +48,15 @@ setup.bat
 start.bat
 ```
 
-### 手動起動
-#### バックエンド (Port: 8765)
-```bash
-cd backend
-pip install -r requirements.txt
-python server.py
-```
+## 📂 ドキュメント
+- [アーキテクチャ詳細 (ARCHITECTURE.md)](docs/ARCHITECTURE.md)
+- [セットアップガイド (SETUP.md)](docs/SETUP.md)
 
-#### フロントエンド (Port: 4567)
-別ターミナルで実行してください。
-```bash
-cd frontend
-npm install
-npx vite --port 4567
-```
+## 🗺 今後の拡張計画 (Roadmap)
+- TypeScriptへの完全移行による型安全性の向上
+- Jestを用いた自動テスト（単体・結合テスト）の追加
+- Docker化による環境構築のさらなる簡易化
+- GitHub Pages または Vercel などを用いたフロントエンド・デモサイトのホスティング
 
-ブラウザで `http://localhost:4567` にアクセスして学習を開始してください。
+## 📄 ライセンス
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
